@@ -10,15 +10,13 @@ export default {
   },
   data() {
     return {
-      clientID: '1000.5Y3XAHM4OY62F5DOPA6PWEW5NVXJHI' ,
       accessData: '' 
     };
   },
   methods: {
     redirectToZoho() {
-      const redirectURI = 'http://localhost:5173/create-deal';
-      const authURL = `https://accounts.zoho.com/oauth/v2/auth?scope=ZohoCRM.modules.ALL&client_id=${this.clientID}&redirect_uri=${redirectURI}&response_type=code&access_type=offline`;
-      window.open(authURL, '_blank');
+     const authURL = 'http://localhost:8000/zoho/redirect';
+      window.open(authURL, "_blank");
     },
 
     handleAuthorizationCode() {
